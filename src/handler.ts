@@ -69,7 +69,7 @@ export class LoadBalancer extends DurableObject {
 			const failedCount = row[1] as number;
 
 			try {
-				const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`, {
+				const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ export class LoadBalancer extends DurableObject {
 		for (const row of Array.from(normalKeys)) {
 			const apiKey = row[0] as string;
 			try {
-				const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`, {
+				const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -1066,7 +1066,7 @@ export class LoadBalancer extends DurableObject {
 			const checkResults = await Promise.all(
 				keys.map(async (key) => {
 					try {
-						const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-2.5-flash-lite:generateContent?key=${key}`, {
+						const response = await fetch(`${BASE_URL}/${API_VERSION}/models/gemini-3.5-flash-lite:generateContent?key=${key}`, {
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',
